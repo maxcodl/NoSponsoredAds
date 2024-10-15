@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FSA</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        margin: 0;
+        background-color: #f0f4f8;
+      }
+
+      .container {
+        text-align: center;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #d3d3d3;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 32px;
+        width: 32px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        transition: 0.4s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      input:checked + .slider {
+        background-color: #4c8baf;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(40px);
+      }
+
+      #status {
+        font-size: 18px;
+        color: #666;
+      }
+
+      input:checked ~ #status {
+        color: #4c9baf;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Block sponsored Ads</h2>
+      <label class="toggle-switch">
+        <input type="checkbox" id="ad-blocker-toggle" />
+        <span class="slider"></span>
+      </label>
+      <p id="status">Off</p>
+    </div>
+
+    <!-- Reference to external script -->
+    <script src="/main/popup.js"></script>
+  </body>
+</html>
