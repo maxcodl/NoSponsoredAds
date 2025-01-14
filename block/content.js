@@ -1,4 +1,4 @@
-// Function to remove elements with class 'cu-container' and 'qGXjvb'
+// Function to remove elements with class 'cu-container', 'qGXjvb', and 'uEierd'
 function removeAds() {
     // Remove 'cu-container' ads
     const cuContainers = document.querySelectorAll('div.cu-container');
@@ -14,6 +14,17 @@ function removeAds() {
     // Remove 'qGXjvb' ads
     const qGXjvbAds = document.querySelectorAll('div.qGXjvb');
     qGXjvbAds.forEach(ad => {
+        const closestAdContainer = ad.closest('div.c3mZkd');
+        if (closestAdContainer) {
+            closestAdContainer.style.display = 'none';
+        } else {
+            ad.style.display = 'none';
+        }
+    });
+
+    // Remove 'uEierd' ads
+    const uEierdAds = document.querySelectorAll('div.uEierd');
+    uEierdAds.forEach(ad => {
         const closestAdContainer = ad.closest('div.c3mZkd');
         if (closestAdContainer) {
             closestAdContainer.style.display = 'none';
